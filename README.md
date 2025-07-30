@@ -29,11 +29,6 @@
 
 ## 📸 Capturas de pantalla
 
-![DeliciasApp1](https://github.com/BryanOroxon/DeliciasApp/blob/main/Screenshots/DeliciasApp1.gif?raw=true)
-
-
-![DeliciasApp1](https://github.com/BryanOroxon/DeliciasApp/blob/main/Screenshots/DeliciasApp2.gif?raw=true)
-
 | Pantalla 1 | Pantalla 2 |
 |------------|------------|
 | ![DeliciasApp1](https://github.com/BryanOroxon/DeliciasApp/blob/main/Screenshots/DeliciasApp1.gif?raw=true) | ![DeliciasApp2](https://github.com/BryanOroxon/DeliciasApp/blob/main/Screenshots/DeliciasApp2.gif?raw=true) |
