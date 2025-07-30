@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DeliciasApp.Views.DetallePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Nombre}">
+    <Grid
+        HorizontalOptions="FillAndExpand"
+        RowDefinitions="7*,3*"
+        VerticalOptions="FillAndExpand">
+        <Image
+            Grid.Row="0"
+            Grid.Column="0"
+            Aspect="AspectFill"
+            HeightRequest="500"
+            Source="{Binding ImagenUrl}" />
+        <Frame
+            Grid.Row="0"
+            Margin="30"
+            Padding="0"
+            BackgroundColor="#d5d8ff"
+            BorderColor="OrangeRed"
+            CornerRadius="20"
+            HasShadow="True"
+            HeightRequest="75"
+            VerticalOptions="Start">
+            <Frame.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity="0.9   "
+                    Offset="10,10" />
+            </Frame.Shadow>
+            <Label
+                Margin="15"
+                FontAttributes="Bold"
+                FontSize="26"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Text="{Binding Nombre}"
+                TextColor="#3C3DFA"
+                VerticalOptions="Center" />
+        </Frame>
+        <Frame
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="5,-10,5,10"
+            BackgroundColor="#D3AFFA"
+            BorderColor="OrangeRed"
+            CornerRadius="40"
+            HasShadow="True"
+            HeightRequest="320">
+            <VerticalStackLayout
+                Padding="5,5"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start">
+                <Label
+                    Margin="2,20"
+                    FontSize="22"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Justify"
+                    Text="{Binding Descripcion}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

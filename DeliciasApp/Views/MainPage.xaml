@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DeliciasApp.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Delicias Poblanas">
+
+    <Grid Padding="0,10,0,0" RowDefinitions="Auto,Auto,*">
+        <Frame
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="25,0,25,5"
+            BackgroundColor="#d5d8ff"
+            BorderColor="OrangeRed"
+            CornerRadius="20"
+            HasShadow="True">
+            <Frame.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity="0.9   "
+                    Offset="10,10" />
+            </Frame.Shadow>
+            <Label
+                FontAttributes="Bold"
+                FontSize="32"
+                HorizontalOptions="Center"
+                Text="Delicias Poblanas" />
+        </Frame>
+
+        <HorizontalStackLayout
+            Grid.Row="1"
+            Padding="10,5"
+            Spacing="10">
+            <SearchBar
+                x:Name="Buscador"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Buscar platillo..."
+                Text="{Binding SearchText, Mode=TwoWay}" />
+
+        </HorizontalStackLayout>
+        <CollectionView
+            x:Name="DishesCollectionView"
+            Grid.Row="2"
+            ItemsSource="{Binding Dishes}"
+            SelectedItem="{Binding SelectedDish}"
+            SelectionChangedCommand="{Binding DishSelected}"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="10,5"
+                        Padding="5"
+                        BackgroundColor="#3caeff"
+                        BorderColor="#E0E0E0"
+                        CornerRadius="15"
+                        HasShadow="True">
+                        <Frame.Shadow>
+                            <Shadow
+                                Brush="#44414b"
+                                Opacity="0.9   "
+                                Offset="20,20" />
+                        </Frame.Shadow>
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions="80,*,40"
+                            RowDefinitions="Auto">
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="70"
+                                Source="{Binding ImagenUrl}"
+                                VerticalOptions="Center"
+                                WidthRequest="70" />
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Spacing="2"
+                                VerticalOptions="Center">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="{Binding Nombre}" />
+                                <Label
+                                    FontSize="13"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="2"
+                                    Text="{Binding Descripcion}"
+                                    TextColor="#666" />
+                            </VerticalStackLayout>
+
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
